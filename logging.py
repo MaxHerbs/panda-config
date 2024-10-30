@@ -14,7 +14,7 @@ def logging(func):
     def caput(pv: str, val: str, hasType=None) -> str:
         timestamp = datetime.now().strftime("%Y-%m-%d %H:%M:%S")
         f.write(f"[{timestamp}] ")
-        f.write(f"Ran caput `{pv}` `{val}`\n")
+        f.write(f"Ran caput `{pv}` `{val}` {f'with type {hasType}' if hasType else ''}\n")
         return func(pv, val, hasType)
 
     def caget(pv: str) -> str:
@@ -22,7 +22,6 @@ def logging(func):
         f.write(f"[{timestamp}] ")
         f.write(f"Ran caput `{pv}`\n")
         return func(pv)
-
 
     def wrapper(*args, **kwargs):
         timestamp = datetime.now().strftime("%Y-%m-%d %H:%M:%S")
