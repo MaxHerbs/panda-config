@@ -1,0 +1,79 @@
+iocPrefix: BL99P-MO-PANDA-01
+blocks:
+  - name: CLOCK1
+    puts: 
+      label: Configurable clocks 1
+      enable: PCAP.ACTIVE
+      enable:delay: 0
+      period: 18.72
+      period:units: us
+      width: 0
+      width:units: us
+
+  - name: SEQ1
+    puts: 
+      label: Sequencer 1
+      enable: PCAP.ACTIVE
+      enable:delay: 0
+      bita: CLOCK1.OUT
+      bita:delay: 0
+      bitb: ZERO
+      bitb:delay: 0
+      bitc: ZERO 
+      bitc:delay: 0
+      posa: ZERO
+      posb: ZERO
+      posc: ZERO
+
+      prescale: 0.008
+      prescale:units: us
+      repeats: 3205128
+
+  - name: PCAP
+    puts:
+      label: Position capture control 
+      enable: ONE
+      enable:delay: 0 
+      gate: SEQ1.OUTA
+      gate:delay: 0
+      trig: SEQ1.OUTA
+      trig:delay: 0
+      trig_edge: Falling
+      shift_sum: 0
+
+  - name: COUNTER1
+    puts:
+      label: Up/Down pulse counter 1
+      enable: PCAP.ACTIVE
+      enable:delay: 0
+      trig: SEQ1.OUTA
+      trig:delay: 0
+      dir: ZERO
+      dir:delay: 0
+      trig_edge: Rising
+      out_mode: On-Change
+      set: 0
+      start: 0
+      step: 1
+      max: 0
+      min: 0
+
+
+  - name: COUNTER2
+    puts:
+      label: Up/Down pulse counter 2
+      enable: PCAP.ACTIVE
+      enable:delay: 0
+      trig: SEQ1.OUTA
+      trig:delay: 0
+      dir: ZERO
+      dir:delay: 0
+      trig_edge: Rising
+      out_mode: On-Change
+      set: 0
+      start: 0
+      step: 1
+      max: 0
+      min: 0
+
+
