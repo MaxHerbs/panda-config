@@ -1,6 +1,6 @@
 # PandA Configure
-A script to reconfigure PV on a PandA on mass. 
-Designed for version `0.10.0` on firmware `4.0b1`. 
+A script to reconfigure PV on a PandA over channel access. 
+Tested on version `0.10.0` on firmware `4.0b1`. 
 
 # Using the Script
 Set up the `config.yaml`. Configure the IOC prefix for the target panda.

@@ -20,7 +20,7 @@ def logging(func):
     def caget(pv: str) -> str:
         timestamp = datetime.now().strftime("%Y-%m-%d %H:%M:%S")
         f.write(f"[{timestamp}] ")
-        f.write(f"Ran caput `{pv}`\n")
+        f.write(f"Ran caget `{pv}`\n")
         return func(pv)
 
     def wrapper(*args, **kwargs):
@@ -31,8 +31,7 @@ def logging(func):
     localFuncs = list(locals())
     if func.__name__ in localFuncs:
         return locals()[func.__name__]
-    else:
-        return wrapper
+    return wrapper
 
 
 

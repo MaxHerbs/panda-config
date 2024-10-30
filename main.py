@@ -18,9 +18,9 @@ def main():
     for block in config["blocks"]:
         updateBlock(iocPrefix, block)
 
-    caput("BL20J-EA-PANDA-01:PCAP:ARM", "1")
-    time.sleep(0.5)
-    val = caget("BL20J-EA-PANDA-01:COUNTER2:OUT")
+    caput(f"{iocPrefix}:PCAP:ARM", "1")
+    time.sleep(0.8)
+    val = caget(f"{iocPrefix}:COUNTER2:OUT")
     print(val)
 
 if __name__ == "__main__":
