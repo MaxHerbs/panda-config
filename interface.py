@@ -25,6 +25,7 @@ def updateBlock(iocPrefix: str, blockSchema: dict) -> list:
         print("\n")
 
 
+@logging
 def caget(pv: str) -> str:
     return catools.caget(pv)
 

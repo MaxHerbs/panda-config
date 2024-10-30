@@ -1,4 +1,4 @@
-# Panda Configure
+# PandA Configure
 A script to reconfigure PV on a PandA on mass. 
 Designed for version `0.10.0` on firmware `4.0b1`. 
 
@@ -16,7 +16,7 @@ blocks:
       enable: PCAP.ACTIVE
 ```
 
-PV names are built by concatenating `iocPrefix + name + puts[i]` so any accessible PV can be added within its own block.
+PV names are built by concatenating `iocPrefix + name + puts[i]` so any accessible PV can be added within its own block in the config file.
 
 To run the script,
 
